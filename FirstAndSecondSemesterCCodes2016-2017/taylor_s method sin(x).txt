@@ -1,0 +1,41 @@
+#include<stdio.h>
+#include<math.h>
+ void main(void)
+ {
+  float x,dx,x1,x2,c,d,f,e,sum; int a,b,n;
+   printf("\t\tThis program counts functions");
+   printf("\n\t\twith the help of McLoren's line,");
+   printf("\n\t\twhere n is a length of line \n\t\tand n~1/epsilon, epsilon=|s2-s1|");
+   printf("\n\t\tx belongs to (0.1;1)\n");
+   printf("\n\t\tinput minimum x: "); scanf("%f",&x1);
+   printf("\t\tinput maximum x: "); scanf("%f",&x2);
+   printf("\t\tinput n:"); scanf("%d",&n);
+	x=x1;
+    dx=(x2-x1)/9;/// why 9 not 10? because prgrm starts counting with x and x+dx
+    
+    if((x1>=0.1)&&(x1<=1)&&(x2>=0.1)&&(x2<=1)&&(n>=1))
+    {
+      for(a=1; a<=10; a++)
+      { 
+       d=x; c=1; sum=0; f=x;
+      
+         for(b=1;b<=n; b++)
+         {
+            	for(e=1;e<=(2*b+1);e++)
+            	{
+        	     c=1;
+        	     c=c*e;
+			    }
+			    
+			f=-f*x*x;
+          d=d+(f)/c;
+       
+	     }
+	    printf("\nx=%f, d=%f, sin(x)=%f",x,d,sin(x));
+	    x=x+dx;
+      }
+	 
+   }
+   else
+   {printf("\n\t\tInput error, reload program");}
+ }

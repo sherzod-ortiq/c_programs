@@ -1,0 +1,26 @@
+#include<stdio.h>
+
+ int main(void)
+ {
+   int a,b,n,i,z;
+    
+    printf("Input x+y= ");
+    scanf("%i",&a);
+    printf("Input x*y= ");
+    scanf("%i",&b);
+
+      if (a>=b) z=a; else z=b;
+
+	   for(n=0; n<=z; n++)
+	   {
+             for(i=0;i<=z;i++)
+             {
+	       if (i*n==b&&(i+n)==a)   
+               {
+                 printf("x= %i",i); printf(" y= %i\n\n\n",n); return(0);
+	       }
+             }
+
+            }   
+  }
+ 

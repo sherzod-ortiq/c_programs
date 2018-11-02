@@ -1,0 +1,42 @@
+#include<stdio.h>
+
+  int f(int *array, int size);
+  void main(void)
+  {
+    int i,size;
+
+      printf("Input size of the array: ");
+      scanf("%d",&size);
+
+        int array[size];
+
+          freopen("1.txt","r",stdin);
+
+            for(i=0;i<size;i++)
+            {  scanf("%d",&array[i]);  }
+
+              i=f(array,size);
+
+                printf("The biggest integer is: %d",array[i]);
+
+
+  }
+
+
+/////////////////////////////////////////////function{
+  int f(int *array,int size)
+  {
+    int j=0,i;
+
+      while(i<size-1)
+      {
+        i=0;
+        j++;
+
+          while(array[j]>=array[i])
+          {  i++;  }
+
+      }
+        return(j);
+  }
+/////////////////////////////////////////////function}

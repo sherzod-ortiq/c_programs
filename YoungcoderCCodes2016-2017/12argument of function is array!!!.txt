@@ -1,0 +1,40 @@
+#include<stdio.h>
+
+  int a;
+
+    int f(int,float arr[]);
+    void main(void)
+    {
+      int size;//there
+      printf("input size of array: ");
+      scanf("%d",&size);
+
+        freopen("/home/butterfly/Desktop/1.txt","r",stdin);
+        float array[size];
+
+          for(a=0;a<size;a++)
+          {
+            scanf("%f",&array[a]);
+            printf("%f",array[a]);
+          }
+
+            if(f(size,array)==0)
+            { printf("\nno"); }
+            else
+            { printf("\nyes"); }
+
+
+     }//final
+
+
+     int f(int size, float arr[])
+     {
+       int c=0;
+         for(a=0;a<size;a++)
+         {
+           if(arr[a]<0)
+           { c++; }
+         }
+           return(c);
+     }
+

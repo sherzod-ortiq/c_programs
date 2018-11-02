@@ -1,0 +1,105 @@
+#include<stdio.h>
+#define size1 150
+#define size2 500
+
+  void main(void)
+  {
+/////////////////////////////////////////////////////////copying words to array2{
+    char array1[size1],array2[size2],temp;
+    int a=0,b=0,c=0,d=0,e,f=0,g,h;
+
+      fgets(array1,size1,stdin);
+
+        while(array1[a]!='\0')
+        {
+          if((array1[a]>=65 && array1[a]<=90)||(array1[a]>=97 && array1[a]<=122))
+          {
+            array2[b]=array1[a];
+              b++;
+              a++;
+          }
+          else
+          {
+            if(array1[a]==' ' || array1[a]=='\n')//left free memory is filled wiht ' '.
+            {
+              c+=15;
+              f++;
+              
+                for(e=b;e<=c;e++)
+                {  array2[e]=' ';  }
+               
+                  b=c;
+                  a++;
+  
+            }
+            else
+            { a++; }
+         }
+       }
+//////////////////////////////////////////////////////////copying words to array2}
+
+///////////////////////output of array2{
+       printf("Words from sentence:\n");
+         while(d!=f*15)
+         {
+           if(d%15==0)
+           {  printf("\n");  }
+
+             printf("%c",array2[d]);
+               d++;
+         }
+///////////////////////output of array2}
+
+/////////////quick sort of array2 by first letters of words{
+a=0;b=15;c=0,d=15;
+
+  for(g=0;g<f-1;g++)
+  {
+    for(h=0;h<f-1-g;h++)
+    {
+      if((array2[a]<=90 && array2[a]>=65) && (array2[b]>=97 && array2[b]<=122))
+      { c=-32;}
+      if((array2[b]<=90 && array2[b]>=65) && (array2[a]>=97 && array2[a]<=122))
+      { c=32;}
+
+        if(array2[a]>array2[b]+c)
+        {
+          for(e=0;e<15;e++)
+          {
+            temp=array2[a];
+            array2[a]=array2[b];
+            array2[b]=temp;
+            a++;
+            b++;
+          }
+            c=0;
+            d+=15;
+        }
+        else
+        {
+          a=d;
+          d+=15;
+          b=d;
+          c=0;
+        }
+      }
+        a=0;b=15;d=15;
+   }
+//////////////////////quick sort of array2 by first letters of words}
+
+printf("\n\n");
+
+////////////////////////output of sorted array2{           
+d=0;
+  printf("Words after sort by first letter:\n");
+    while(d!=f*15)
+    {
+      if(d%15==0)
+      {  printf("\n");  }
+
+        printf("%c",array2[d]);
+          d++;
+    }
+////////////////////////output of sorted array2}
+
+  }//final curly brace.

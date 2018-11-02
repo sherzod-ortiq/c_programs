@@ -1,0 +1,34 @@
+#include<stdio.h>
+#include<math.h>
+ float f(float x);
+ void main(void)
+ {
+  float eps,c,a,b,count; 
+  printf("input a: "); scanf("%f",&a);
+  printf("input b: "); scanf("%f",&b);
+   eps=pow(10,(-5));
+   count=0;
+
+    while (fabs(b-a)>eps)
+    {
+     c=(a+b)/2;
+     
+       if (f(c)==0)
+       {printf("root is equal to : %f",c);}
+     
+       if (f(a)*f(c)<0)
+       {b=c;}
+	   else
+	   {a=c;}
+	    
+		count=count+1;
+	    printf("\nnumber of operation = %.0f , x= %.5f, f(x) = %.5f ",count,c,f(c));
+	    
+    }
+ }
+    
+  float f(float x)
+  {
+   float freturn=(exp(x)-log10(x)-10*x);
+   return(freturn);	
+  }

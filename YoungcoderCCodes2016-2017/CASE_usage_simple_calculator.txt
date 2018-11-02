@@ -1,0 +1,24 @@
+#include<stdio.h>
+
+ int main()
+ {
+   float a,b; 
+   char c;
+   printf("\t\t\tTHIS IS A SIMPLE CALCULATOR \n\nInput operation without space: ");
+   scanf("%f%c%f",&a,&c,&b);// c can be taken as space !!!!!!!!!, be careful!!!!
+   printf("\n");
+   
+     switch (c) 
+     {
+       case '+': printf("%f",a); printf(" +"); printf(" %f",b); printf(" = %f",a+b); break;
+       case '-': printf("%f",a); printf(" -"); printf(" %f",b); printf(" = %f",a-b); break;
+       case '*': printf("%f",a); printf(" *"); printf(" %f",b); printf(" = %f",a*b); break;
+       case '/': if (b==0) {printf("ERROR"); } else {printf("%f",a); printf(" /"); printf(" %f",b); printf(" = %f",a/b);} break;
+     }  
+        //be very careful with = and ==!!!!!
+	   return(0);
+ }
+
+
+  
+

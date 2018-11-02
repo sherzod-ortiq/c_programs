@@ -1,0 +1,49 @@
+#include<stdio.h>
+ int main()
+{ 
+  float a,b,c,x1,x2,xn,dx;
+   printf("Input a,b,c,x1,x2,dx,");
+   scanf("%f%f%f%f%f%f",&a,&b,&c,&x1,&x2,&dx);
+    xn=x1;
+    
+  if (dx>0&&x1<=x2)
+    {
+	   
+     while (xn<=x2)
+        { 
+		  if   ((xn-1)<0 && (b-xn)!=0)
+    
+			 {
+		     	printf("a*x^2+b= %f",(a*xn*xn+b));
+			 }
+			 
+		  if   ((xn-1)>0&&(b+xn)==0)
+		     
+		     {
+			     printf("(x-a)/x= %f",(xn-a)/xn);
+			 }
+			 
+		  if (!(((xn-1)>0&&(b+xn)==0||(xn-1)<0&&(b-xn)!=0)))
+		     
+			 { 
+			    printf("x/c %f",xn/c);
+		     }
+
+
+			    
+		
+		  xn=(xn+dx);
+		  printf("1");
+		
+					
+							
+		}
+   }
+   
+   else 
+       
+       printf("ERROR");
+       
+ return(0);		
+}
+   

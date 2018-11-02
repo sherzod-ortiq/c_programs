@@ -1,0 +1,44 @@
+#include<stdio.h>
+
+  void quick_sort(int *array,int size);
+  void main(void)
+  {
+   int size;
+    printf("Input size of the array: ");
+    scanf("%d",&size);
+
+      int array[size],i;
+        freopen("1.txt","r",stdin);
+        
+          for(i=0;i<size;i++)
+          {
+            scanf("%d",&array[i]);
+          }
+
+            quick_sort(array,size);
+  }
+////////////////////////////////////////////////function{
+  void quick_sort(int *array,int size)
+  {
+    int array1[size],temp,i,j;
+    
+      for(i=0;i<size;i++)
+      {  array1[i]=array[i];  }
+//////////////////////////////////////////////quick_sort{
+        for(i=0;i<size-1;i++)
+        {
+          for(j=0;j<size-1-i;j++)
+          {
+            if(array1[j]>array1[j+1])
+            { 
+               temp=array1[j+1];
+               array1[j+1]=array1[j];
+               array1[j]=temp;
+             }
+           }
+         }
+//////////////////////////////////////////////quick_sort}
+           for(i=0;i<size;i++)
+           {  printf("%d   %d\n",array[i],array1[i]);  }
+  }
+////////////////////////////////////////////////function}

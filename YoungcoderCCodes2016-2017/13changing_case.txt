@@ -1,0 +1,18 @@
+#include<stdio.h>
+  void main(void)
+  {
+    char array[100];
+      int a;    
+        fgets(array,100,stdin);
+    
+          for(a=0;a<99;a++)
+          {
+            if((array[a]<=90)&&(array[a]>=65))
+            {
+               array[a]=array[a]+32;             
+            }
+          }
+
+             fputs(array,stdout);
+   }//finish
+

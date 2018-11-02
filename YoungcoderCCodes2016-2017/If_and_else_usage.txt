@@ -1,0 +1,34 @@
+
+int main(void)                            
+{
+   int a,b;
+	printf("Input a: ");
+	scanf("%f",&a);
+	printf("Input b: ");
+	scanf("%f",&b);
+
+	 if (a==0&&b==0)
+
+	   { 
+	    printf("Many roots");
+       }
+
+	      else if (a==0&&b!=0) 	
+			    {
+				 printf("No roots");
+		        }
+
+	                 else if (b%a==0)
+		                  {
+						   printf("Root is equal to %i",b/a);
+		                  }
+		                   
+		                     else 
+		                     {
+		                     	printf("No roots");
+							 }
+                
+ return(0);
+}  
+     
+     

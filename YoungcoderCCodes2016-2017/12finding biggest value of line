@@ -1,0 +1,32 @@
+#include<stdio.h>
+
+  int a,b,biggest,size;
+
+  int  main(void)
+  {
+    printf("input size of array : "); scanf("%d",&size);
+    printf("\n\n\n");
+
+      freopen("/home/butterfly/Desktop/1.txt","r",stdin);
+        int array[size];
+
+          for(a=0;a<size;a++)
+          {
+             scanf("%d",&array[a]);
+             printf(" %d",array[a]);
+          }
+
+            printf("\n\n\n");
+            biggest=array[0];
+            for(b=1;b<size;b++)
+            {
+              if(biggest<array[b])
+              {  biggest=array[b];  }
+
+            }
+
+              printf("biggest element of array= %d",biggest);
+
+
+  }
+

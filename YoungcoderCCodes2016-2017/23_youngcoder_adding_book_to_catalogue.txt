@@ -1,0 +1,56 @@
+#include<stdio.h>//this code adds book to catalogue,
+                 //as function recieves copy of structure
+  struct book    //original structure remains without changes.
+  {
+    int date;
+    int pages;
+    int read_pages;
+    char author[50];
+    char title[100];
+    float price;
+  };
+
+    void adding_book_to_catalogue(struct book book1);
+    void main(void)
+    {
+      struct book book1[5];
+
+        adding_book_to_catalogue(book1[0]); 
+ 
+    }
+
+    void adding_book_to_catalogue(struct book book1)
+    {
+      char tmp_author[50],tmp_title[50];
+      int tmp_date,tmp_read_pages,tmp_pages,a=0;
+      float tmp_price;
+
+        printf("\t\tThis function adds book to catalogue.\n");
+        printf("Input the name of auhtor: ");
+          fgets(tmp_author,49,stdin);
+        printf("Input the title of the book: ");
+          fgets(tmp_title,49,stdin);
+
+          printf("Input date: ");
+          scanf("%d",&book1.date);
+          printf("Input number of pages: " );
+          scanf("%d",&book1.pages);
+          printf("Input number of read pages: ");
+          scanf("%d",&book1.read_pages); 
+          printf("Input price: ");
+          scanf("%f",&book1.price);
+
+            while(tmp_author[a]!='\n')
+            {
+              book1.author[a]=tmp_author[a];
+                a++;
+            }
+            a=0;
+            while(tmp_title[a]!='\n')
+            {
+              book1.title[a]=tmp_title[a];
+                a++;
+            }
+
+                 printf("%s %s %d %d %d %.1f",book1.author,book1.title,book1.date,book1.read_pages,book1.pages,book1.price);
+    }

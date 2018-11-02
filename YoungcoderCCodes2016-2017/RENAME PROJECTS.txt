@@ -1,0 +1,75 @@
+#include<stdio.h>
+int main()
+{
+ float a,b,c;
+  printf("input a: ");
+  scanf("%f",&a);
+  b=(0.5); c=0;
+       
+   if (a<3000) 
+     { 
+        do
+			 {c=2*b; b=b*2; printf("%.0f ,  ",c);
+		         }
+		      while(c*2<a);
+     }                    
+	   else 
+		   {printf("INPUT ERROR");
+		   }
+ return(0);
+}
+
+
+
+
+
+
+
+#include<stdio.h>
+int main()
+{ int a,b,c,s;
+   printf("input a: ");
+   scanf("%d",&a);
+    b=a;
+    s=0;
+       while(b!=0) 
+            {c=b%10; s=s+c; b/=10;
+			}
+			 printf("Summ of digits equal to: %d",s);
+ return(0);
+}
+
+
+
+#include<stdio.h>
+ int main()
+{ 
+ int a,b,c,d;
+  printf("input a: ");
+  scanf("%i",&a);
+   b=a;
+    while (c!=0)
+        {c=b/2; d=b%2; printf("%d",d); b=c;
+		}
+ return(0);	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

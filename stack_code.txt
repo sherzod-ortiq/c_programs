@@ -1,0 +1,70 @@
+#include<stdio.h>//STACK code.
+#define size1 200
+
+  void push(int *array1,int *p_target1);   // Array is populated starting from
+  void pop(int *array1,int *p_target1);    // number 199 up to 0.
+  void view(int *array1,int *p_target1);   // Pop and view functions have
+  void content(int *array1,int *p_target1);// conditions for implementation:
+                                           // "target is not equal to 199". 
+  void main(void)
+  {
+    int array1[size1],target1=199,*p_target1,a;
+      p_target1=&target1;
+      *p_target1=target1;
+      while(a!=5)
+      {
+          printf("\tChoose action:\n");
+          printf("\tPrint \"1\" for pushing element\n");
+          printf("\tPrint \"2\" for popping element\n");
+          printf("\tPrint \"3\" for viewing active element\n");
+          printf("\tPrint \"4\" for viewing array's content\n");
+          printf("\tPrint \"5\" for exit\n");
+
+            scanf("%i",&a);
+
+              switch(a)
+              {
+                case 1:push(array1,p_target1);break;
+                case 2:pop(array1,p_target1);break;
+                case 3:view(array1,p_target1);break;
+                case 4:content(array1,p_target1);break;
+              }
+
+      }
+ }
+
+
+  void push(int *array1,int *p_target1)
+  {
+    printf("Input pushing element : ");
+    scanf("%d",&array1[*p_target1]);
+    *p_target1=*p_target1-1;;
+  }
+
+
+  void pop(int *array1,int *p_target1)
+  {
+    if(*p_target1!=199)
+      {
+        printf("Popped element is : %d\n",array1[*p_target1+1]);
+        *p_target1=*p_target1+1;
+      }
+  }
+
+
+  void view(int *array1,int *p_target1)
+  {
+    if(*p_target1!=199)
+      {  printf("Active element is : %d\n",array1[*p_target1+1]); }
+  }
+
+
+  void content(int *array1,int *p_target1)
+  {
+    if(*p_target1!=199)
+      {  printf("Array content:\n"); }
+     
+       for(int b=*p_target1+1;b<=199;b++)
+       {  printf("%d \n",array1[b]); }
+  } 
+

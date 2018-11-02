@@ -1,0 +1,35 @@
+#include<stdio.h>
+  int a,b,size,epsilon; 
+   
+    int main(void)
+    {
+      printf("input size of array: "); scanf("%d",&size);
+      printf("\ninput epsilon: "); scanf("%d",&epsilon);
+
+        freopen("/home/butterfly/Desktop/1.txt","r",stdin);
+        int array[size];
+
+          for(a=0;a<size; a++)
+          {
+            scanf("%d",&array[a]);
+            printf(" %d",array[a]);
+          }
+
+            for(a=0;a<size;a++)
+            {
+              if(epsilon>abs(array[a]))
+              { b++;}
+            } 
+
+              printf("\namount of elements of array ");
+              printf("\nabsolute values of which are < epsilon");
+              printf("\nequal to %d",b); 
+     }//final
+
+
+
+
+
+
+
+

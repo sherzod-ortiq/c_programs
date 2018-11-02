@@ -1,0 +1,62 @@
+#include<stdio.h>
+#include<math.h>
+
+ float f(float x);
+ 
+ void main(void)
+ { 
+   float x1,x2,xn,dx,d,a,pi,sh1,sh2,shd;
+     
+     printf("\t\tTHIS IS TABULATION");
+     printf("\n\tInput values in degrees, except a !!!\n");
+     printf("\tInput a: ");       scanf("%f",&a);
+     printf("\tInput minimum x: "); scanf("%f",&x1);
+     printf("\tInput maximum x: "); scanf("%f",&x2);
+     printf("\tInput step dx: ");   scanf("%f",&dx);
+
+       pi=3.142;
+       x1=x1*pi/180;
+       x2=x2*pi/180;
+       dx=dx*pi/180;
+//////////////////////////////////////////////////////////////////////////////linear conditions{
+         if (dx==0||(x1==x2))
+         { printf("\n\t\tINPUT ERROR RELOAD PROGRAMM\n\n"); d=0; }
+
+         if(x1>x2)
+         {
+           if(dx>0)
+           { printf("\n\t\tINPUT ERRO RELOAD PROGRAMM\n\n"); d=0; }
+         }
+
+         if(x1<x2)
+         {
+           if(dx<0)
+           { printf("\n\t\tINPUT ERROR RELOAD PROGRAMM\n\n"); d=0; }
+         }
+////////////////////////////////////////////////////////////////////////////////linear conditions}
+           if(d!=0)
+           {  
+             int n=fabs(x2-x1)/fabs(dx),i=0;
+             xn=x1; 
+             
+               printf("\n\t\tInput values in radians: \n\t\tmaximum x= %f\n\t\tminimum x= %f\n\t\t step dx= %f\n",x1,x2,dx);
+
+                 while(i<=n)
+                   {
+                     printf("\n\tx= %f, f(x)= %f",xn,f(xn));
+                     
+					   xn=xn+dx;
+                       i=i+1;
+                   }
+           }
+
+  }
+
+
+
+ float f(float x)
+ {
+ float retval=(pow(2,x));
+ return(retval);
+ }
+

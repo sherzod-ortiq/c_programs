@@ -1,0 +1,70 @@
+#include<stdio.h>///youngcoder.net,13th class tasks
+
+  void main(void)
+  { 
+    int a,b,d=0,array3[33];
+    char array1[200],array2[33],c;
+
+      fgets(array1,200,stdin);
+     
+////////////////////////////////////////////////////////counting characters and changing case{
+
+        while((array1[d]!='\n')&&(array1[d]!='\0'))
+        {
+          if((array1[d]<=90)&&(array1[d]>=65))
+          {  array1[d]=array1[d]+32;  } 
+
+            d++;
+        }
+
+//////////////////////////////////////////////////////}
+       
+//////////////////////////////////////////bubble sort{          
+          for(a=0;a<d;a++)
+          {
+             for(b=0;b<d-1-a;b++)
+             { 
+                if(array1[b]>array1[b+1])
+                {
+                  c=array1[b];
+                  array1[b]=array1[b+1];
+                  array1[b+1]=c;
+                }
+             }
+          }
+///////////////////////////////////////////bubble sort}           
+
+for(a=0;a<33;a++)//filling array
+{
+  array3[a]=1;
+}         
+
+b=0; 
+
+///////////////////////////////////////////////counting equal characters{      
+            for(a=0;a<d;a++)
+            {
+              array2[b]=array1[a];
+
+                if(array1[a]==array1[a+1])
+                {  array3[b]++;  }
+                else
+                {  b++;  }
+             }
+/////////////////////////////////////////////////} 
+
+//////////////////////////////////////////////////////////////final output{ 
+               printf("%d\n",d);
+                 for(a=0;a<b;a++)
+                 {
+                   if(array2[a]!=' ')
+                   {  printf("%c - %d\n",array2[a],array3[a]);  }
+                 } 
+                  
+                   if(array2[0]==' ')
+                   {  printf("probel - %d",array3[0]);  }          
+//////////////////////////////////////////////////////////////}   
+
+
+  }//the end.
+

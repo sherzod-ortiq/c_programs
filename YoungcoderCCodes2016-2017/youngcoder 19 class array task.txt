@@ -1,0 +1,79 @@
+#include<stdio.h>
+#include<math.h>
+
+ void main(void)
+ {
+  float A[10][10];
+  int a,b,f,c,d=4,e=1,g=0,h=0,i=0,j=0;
+   printf("input a: "); scanf("%d",&a);
+   printf("input b: "); scanf("%d",&b);
+    int amin=0,amax=a;
+    int bmin=0,bmax=b;
+
+	for(c=0;c<=9;c++)
+    {
+	 for(f=0;f<=9;f++)
+     {A[c][f]=0;}
+    }
+    
+	  
+  
+ do{ g=0;h=0;i=0;j=0;
+ ////////////////////////////////////////////////////////
+  	if(bmin<=bmax)
+  	{
+      for(c=bmin;c<=bmax;c++)
+      {
+        A[amin][c]=e;
+        e++;
+	  }
+	   amin++;
+	   g=1;
+     }
+	  ///////////////////////////////////////////////////////
+	   if((amin<=amax)&&(g==1))
+	   {
+	   	 for(c=amin;c<=amax;c++)
+	   	 {
+		  A[c][bmax]=e;
+		  e++;
+	     }
+	      bmax--;
+	      h=1;
+	   }
+	   ///////////////////////////////////////////////////////
+	   if((bmax>=bmin)&&(h==1))
+	   {
+	   	 for(c=bmax;c>=bmin;c--)
+	   	 {
+	      A[amax][c]=e;
+	      e++;
+	     }
+	     amax--;
+		 i=1; 
+       }
+       ////////////////////////////////////////////////////////
+      if((amax>=amin)&&(i==1))
+      {
+        for(c=amax;c>=amin;c--)
+		{
+		  A[c][bmin]=e;
+		  e++;	
+		}	
+		bmin++;
+		j=1;
+	   }
+	  
+   }while((g+h+i+j)==4);
+	
+	for(c=0;c<=a;c++)
+	{
+	 printf("\n");
+	 for(f=0;f<=b;f++)
+	 {
+	  printf("%.0f\t",A[c][f]);
+	 }
+    }    
+    
+
+ }

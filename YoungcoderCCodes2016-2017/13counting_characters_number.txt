@@ -1,0 +1,14 @@
+#include<stdio.h> 
+ 
+  char array[100];
+  int  a=0;
+   
+    void main(void)
+    {
+      fgets(array,5,stdin);
+        while((array[a]!='\0')&&(array[a]!='\n'))
+        { a++; }
+          
+          printf("Length of string is = %d",a);
+          fputs(array,stdout);
+    }//final   

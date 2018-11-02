@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <math.h>
+int main(void)
+{
+  float a,b,c,d;
+  d=b*b-4*a*c;
+  printf("Input a,b,c by space : ");
+  scanf("%f%f%f",&a,&b,&c);
+	if (a==0&&c!=0&&b==0)
+	   {printf("NO ROOTS");
+	   }
+	    else if (a==0&&b==0&&c==0)
+		 {printf("MANY ROOTS");
+		 }
+	          else if (d<0)
+		     {printf("NO ROOTS");
+		     }
+	              else if (d=0)
+	               {printf("Only one root, x=  %f",(-b)/2*a);
+		       }
+	                 else
+		               {printf("x1= %f",((-b)-(sqrt(d)))/2*a);
+		                printf(" x2= %f",((-b)+(sqrt(d)))/2*a);
+		               }
+ return(0);
+}

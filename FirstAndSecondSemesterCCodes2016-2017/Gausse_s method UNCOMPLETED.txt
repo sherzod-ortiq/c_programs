@@ -1,0 +1,39 @@
+#include<stdio.h>
+#include<math.h>
+ void main(void)
+ {
+  int a,b,c,d;
+  printf("Solving system of linear equalizations with the help of MATRIX\n");
+  printf("Input number of lines: "); scanf("%d",&a);
+  printf("Input number of columns: "); scanf("%d",&b);
+   float A[a][b+1];
+   
+////////////////////////////////////////matrix input
+for(c=0;c<a;c++)
+{
+ for(d=0;d<=b;d++)	
+ {
+  if(d==b)
+  {printf("Input summ (free member) of %d line :",c); scanf("%f",&A[c][d]);}
+  else
+  {printf("Input a[%d][%d]= ",c,d);scanf("%f",&A[c][d]);}
+ }  
+}	
+///////////////////////////////////////matrix input
+
+////////////////////////////////////////matrix output
+for(c=0;c<a;c++)
+{
+ printf("\n");
+ for(d=0;d<=b;d++)
+ {
+  if(d<b)
+  {printf("%f*x(%d)\t",A[c][d],d+1);}
+  else
+  {printf(" = %f\t",A[c][d]);}
+ }
+}
+/////////////////////////////////////////matrix output
+
+
+}

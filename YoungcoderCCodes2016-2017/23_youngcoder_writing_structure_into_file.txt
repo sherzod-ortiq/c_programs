@@ -1,0 +1,109 @@
+#include<stdio.h>//this code is for writing conteins of structure into file
+
+  struct book
+  {
+    int date;
+    int pages;
+    int read_pages;
+    char author[50];
+    char title[100];
+    float price;
+  };
+
+    void struct_output(struct book book1);//this_function_writes_contents_of_structure_to_file.
+    void main(void)
+    {
+     int e;
+     struct book book1[5];
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////filling_structures{
+int a=0,b=0;
+char c;
+
+  freopen("1.txt","r",stdin);//starting taking values from the file.
+
+    for(int f=0;f<5;f++)
+    {
+
+      while(a!=2)
+      {
+        scanf("%c",&c);
+
+          if(c!='|')
+          {
+            if(c!='\n')
+            {  book1[f].author[b]=c; b++; }
+          }
+          else
+          {  a++;  }
+      }
+
+      b=0;
+
+      while(a!=4)
+      {
+        scanf("%c",&c);
+
+          if(c!='|')
+          {
+            if(c!='\n')
+            {  book1[f].title[b]=c; b++; }
+          }
+          else
+          {  a++;  }
+      }
+
+      b=0;
+
+      scanf("%d",&book1[f].date);
+
+      while(a!=6)
+      {
+        scanf("%c",&c);
+
+          if(c=='|')
+          {  a++; }
+      }
+
+      scanf("%d",&book1[f].read_pages);
+
+      while(a!=8)
+      {
+        scanf("%c",&c);
+
+          if(c=='|')
+          {  a++; }
+      }
+
+      scanf("%d",&book1[f].pages);
+
+       while(a!=10)
+      {
+        scanf("%c",&c);
+
+          if(c=='|')
+          {  a++; }
+      }
+
+      scanf("%f",&book1[f].price);
+
+      a=0;
+
+      printf("%s %s %d %d %d %.1f",book1[f].author,book1[f].title,book1[f].date,book1[f].read_pages,book1[f].pages,book1[f].price);
+
+    }
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////filling_structures}
+
+for(e=0;e<5;e++)
+{
+  struct_output(book1[e]);
+}
+
+  }//final_brace.
+
+     void struct_output(struct book book1)
+     {
+       freopen("2.txt","a",stdout);
+
+         printf("%s||%s||%d||%d||%d||%.1f",book1.author,book1.title,book1.date,book1.read_pages,book1.pages,book1.price);
+     }

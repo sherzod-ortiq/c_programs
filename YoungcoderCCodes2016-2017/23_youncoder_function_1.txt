@@ -1,0 +1,108 @@
+#include<stdio.h>
+
+  struct book
+  {
+    int date;
+    int pages;
+    int read_pages;
+    char author[50];
+    char title[100];
+    float price;
+  };
+
+    void structure_filling(struct book book1,int *p_d);//It fills structure with the elements of file 1.txt .
+
+    void main(void)
+    {
+      int d=0,*p_d;
+      struct book book1[5];
+
+        p_d=&d;
+        *p_d=d;
+
+          for(int s=0;s<3;s++)
+      {
+          structure_filling(book1[s],p_d);
+      }
+
+    }
+
+    void structure_filling(struct book book1, int *p_d)
+    {
+       int a=0,b=0,e=0;
+       char c;
+
+          freopen("1.txt","r",stdin);//starting taking values from the file.
+
+      while(e!=*p_d)//this is for freopen(), function starts ooperation afrer runnig and choosing target character.
+      {
+        scanf("%c",&c);
+
+          if(c=='\n')
+          {  e++;  }
+      }
+
+      while(a!=2)
+      {
+        scanf("%c",&c);
+
+          if(c!='|')
+          {
+            if(c!='\n')
+            {  book1[f].author[b]=c; b++; }
+          }
+          else
+          {  a++;  }
+      }
+
+      b=0;
+
+      while(a!=4)
+      {
+        scanf("%c",&c);
+
+          if(c!='|')
+          {
+            if(c!='\n')
+            {  book1[f].title[b]=c; b++; }
+          }
+          else
+          {  a++;  }
+      }
+
+      scanf("%d",&book1.date);
+
+      while(a!=6)
+      {
+        scanf("%c",&c);
+
+          if(c=='|')
+          {  a++; }
+      }
+
+      scanf("%d",&book1.read_pages);
+
+      while(a!=8)
+      {
+        scanf("%c",&c);
+
+          if(c=='|')
+          {  a++; }
+      }
+
+      scanf("%d",&book1.pages);
+
+       while(a!=10)
+      {
+        scanf("%c",&c);
+
+          if(c=='|')
+          {  a++; }
+      }
+
+      scanf("%f",&book1.price);
+        *p_d=*p_d+1;
+
+          printf("%s %s %d %d %d %.1f\n",book1.author,book1.title,book1.date,book1.read_pages,book1.pages,book1.price);
+
+  }

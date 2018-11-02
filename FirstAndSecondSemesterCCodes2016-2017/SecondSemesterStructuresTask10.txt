@@ -1,0 +1,82 @@
+#include<stdio.h>
+
+#define AmountOfBooks 10
+#define ArraySize 100
+
+  struct book
+  {
+    char AuthorName[ArraySize];
+    char BookName[ArraySize];
+    int PublicationDate;
+  }  book1[AmountOfBooks]=
+     {
+       {"Tanenbaum.","Computer architecture",1997},
+       {"Tanenbaum.","Computer hell",1997},
+       {"Tanenbaum.","Computer birthday party",1997},
+       {"Tanenbaum.","Computer rock",1997},
+       {"Tanenbaum.","Computer army",1997},
+       {"Tanenbaum.","Computer AMIRitecture",1997},
+       {"Tanenbaum.","Computer architecture",1997},
+       {"Tanenbaum.","Computer architecture",1997},
+       {"Tanenbaum.","Computfire architecture",1997},
+       {"Tanenbaum.","Computer architecture",1997}
+     };
+
+  void search(struct book book1[]);
+  void main(void)
+  {
+    search(book1);
+  }
+
+  void search(struct book book1[])
+  {
+    char KeyWord[ArraySize],char1,char2;
+    int IndexStruct,IndexBookName=0,IndexKeyWord=0,sign=0,NumberOfResults=0,c=0;//"singn" is special integer if it =1 while loop stops
+                                                                                //"c" is for difference between cases
+      printf("Input keyword: ");
+      scanf("%s",&KeyWord);
+
+        for(IndexStruct=0;IndexStruct<AmountOfBooks;IndexStruct++)
+        {
+          while(book1[IndexStruct].BookName[IndexBookName]!='\0' && book1[IndexStruct].BookName[IndexBookName]!='\n' && sign==0)
+          {
+            char1=book1[IndexStruct].BookName[IndexBookName];
+            char2=KeyWord[IndexKeyWord];
+
+              if((char1>=65 && char1<=90)&&(char2>=97 && char2<=122))
+              {  c=-32; }
+              if((char2>=65 && char2<=90)&&(char1>=97 && char1<=122))
+              {  c=32; }
+
+                if(book1[IndexStruct].BookName[IndexBookName]==KeyWord[IndexKeyWord]+c)
+                {
+                  IndexKeyWord++;
+                  IndexBookName++;
+                  c=0;
+
+                    if(KeyWord[IndexKeyWord]=='\0' || KeyWord[IndexKeyWord]=='\n')
+                    {
+                      printf("%s  %s  %d\n",book1[IndexStruct].AuthorName,book1[IndexStruct].BookName,book1[IndexStruct].PublicationDate);
+
+                        sign=1;
+                        NumberOfResults++;
+                    }
+                }
+                else
+                {
+                  IndexBookName++;
+                  IndexKeyWord=0;
+                  c=0;
+                }
+          }// final curly bracket for loop "while"
+
+              IndexBookName=0;
+              IndexKeyWord=0;
+              sign=0;
+              c=0;
+
+                if(IndexStruct==AmountOfBooks-1 && NumberOfResults==0)
+                {  printf("NO RESULT");  }
+
+        }// final curly bracket for loop "for"
+  }

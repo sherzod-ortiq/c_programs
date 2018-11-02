@@ -1,0 +1,37 @@
+#include<stdio.h>
+ 
+  int size,a,b,c=0;
+
+    void main(void)
+    {
+      printf("input size of array: ");
+      scanf("%d",&size);
+      
+        freopen("/home/butterfly/Desktop/1.txt","r",stdin);
+        int array[size];
+        
+          for(a=0;a<size;a++)
+          {
+            scanf("%d",&array[a]);
+            printf(" %d",array[a]);
+          }
+       
+            for(a=0;a<size;a++)
+            {
+              for(b=1;b<size-c;b++)
+              {
+                if(array[b-1]>array[b])
+                {
+                  array[b-1]=array[b-1]+array[b];
+                  array[b]=array[b-1]-array[b];
+                  array[b-1]=array[b-1]-array[b];
+                 }
+                    
+               }                  
+                 printf("\n%d",array[size-1-c]);
+                   c++;
+             }
+   
+     }//final
+
+

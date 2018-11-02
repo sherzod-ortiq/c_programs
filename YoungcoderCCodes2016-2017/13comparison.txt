@@ -1,0 +1,47 @@
+#include<stdio.h>
+ 
+  void main(void)   
+  { 
+    int a=0,b=0,c=0,d=0;
+   
+      printf("Input first string\n");
+      char array1[101];  
+      fgets(array1,101,stdin);
+      
+        printf("Input second string\n");
+        char array2[101];
+        fgets(array2,101,stdin);
+     
+          while((array1[a]!='\n')&&(array1[a]!='\0'))
+          {
+            if((array1[a]<=90)&&(array1[a]>=65))
+            {  array1[a]=array1[a]+32;  }
+           
+              a++;
+          }
+
+             while((array2[b]!='\n')&&(array2[b]!='\0'))
+             {
+               if((array2[b]<=90)&&(array2[b]>=65))
+               {  array2[b]=array2[b]+32;  }
+
+                 b++;
+             }
+
+               if(a==b)
+               {
+                 for(c=0;c<a;c++)
+                 {
+                   if(array1[c]==array2[c])
+                   {  d++;  }
+                 }   
+                   if(d==a)
+                   {  printf("yes");  }
+                   else
+                   {  printf("no");  }
+                }
+                else
+                {  printf("no");  }
+                 
+                  printf("\n");
+   }//final

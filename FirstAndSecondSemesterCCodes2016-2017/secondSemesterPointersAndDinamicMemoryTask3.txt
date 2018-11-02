@@ -1,0 +1,37 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+#define size 10
+
+  void unique(int **vector);
+  void main(void)
+  {
+    int *vector[size];
+    vector[0] = (int *)malloc(10);
+ 
+      for(int i = 0; i < size;)
+      { 
+        *vector[i] = rand();
+        vector[++ i] = vector[i - 1] + 1;
+      }
+        for(int i = 0; i < size; i ++)
+        {  printf("%x\n",vector[i]);  }
+        
+          printf("\n\n\n");
+
+            unique(vector);   
+  }
+
+  void unique(int **vector)
+  { 
+    for(int i = 0;i < size - 1;i ++)
+    {
+      for(int j = i; j < size - 1; j ++)
+      {
+        if(vector[i] != vector[j + 1] && *vector[i] == *vector[j + 1])
+        {  vector[i] = vector[j + 1];  }
+      }
+    }
+      for(int i = 0; i < size; i ++)
+      {  printf("%x\n",vector[i]);  }
+  }
